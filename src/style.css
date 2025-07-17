@@ -8,6 +8,40 @@
   --color-error: #ff0000;
   --color-info: #00c8ff;
   --color-success: #00ff11;
+  /*chaingingText lg and biger */
+  --animate-chaingingText: chaingingText 4s ease-in-out forwards alternate
+    infinite;
+  @keyframes chaingingText {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -41px;
+    }
+    50% {
+      top: -90px;
+    }
+    100% {
+      top: -135px;
+    }
+  }
+  /*chaingingText md to lg */
+  --animate-chaingingTextMd: chaingingTextMd 4s ease-in-out forwards alternate
+    infinite;
+  @keyframes chaingingTextMd {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -30px;
+    }
+    50% {
+      top: -67px;
+    }
+    100% {
+      top: -103px;
+    }
+  }
 }
 * {
   list-style: none;

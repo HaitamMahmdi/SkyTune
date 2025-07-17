@@ -1,11 +1,10 @@
 <script setup>
 import { useRouter } from "vue-router";
-import ButtonCom from "./components/ButtonCom.vue";
 const router = useRouter();
 </script>
 
 <template>
-  <header class="mt-8">
+  <header class="mt-8 absolute z-50 top-0 w-full">
     <div
       class="container px-5 relative flex flex-wrap justify-center md:justify-between items-center mx-auto"
     >
