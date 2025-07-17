@@ -9,8 +9,21 @@
   --color-info: #00c8ff;
   --color-success: #00ff11;
 }
+* {
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
 body {
+  margin: 0;
   font-family: "Days One", sans-serif;
   font-weight: 400;
   font-style: normal;
+  background-color: var(--color-secondary);
+  color: var(--color-main-text-color);
+  text-transform: capitalize;
+}
+.font-inter {
+  font-family: "Inter", sans-serif;
 }
