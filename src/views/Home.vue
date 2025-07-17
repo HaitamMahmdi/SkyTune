@@ -1,6 +1,28 @@
 <script setup>
-import bgImage from "@/assets/bgImage.jpg";
 import { onMounted, onUnmounted, ref } from "vue";
+const base = import.meta.env.BASE_URL;
+const genres = [
+  {
+    name: "pop",
+    imageURL: "/genreSection/genre.png",
+  },
+  {
+    name: "Rock",
+    imageURL: "/genreSection/genre1.png",
+  },
+  {
+    name: "Hip-Hop",
+    imageURL: "/genreSection/genre2.png",
+  },
+  {
+    name: "K-Pop",
+    imageURL: "/genreSection/genre3.png",
+  },
+  {
+    name: "jazz",
+    imageURL: "/genreSection/genre4.png",
+  },
+];
 const heroText = ref(null);
 const arr = [
   `LISTEN TO MUSIC`,
@@ -29,7 +51,11 @@ onUnmounted(() => {
 </script>
 <template>
   <section class="h-[100vh] relative">
-    <img class="w-full h-full brightness-50" :src="bgImage" alt="" />
+    <img
+      class="w-full h-full brightness-50"
+      src="/public/assets/bgImage.jpg"
+      alt=""
+    />
     <div
       class="absolute container flex flex-col justify-center top-3/6 left-3/6 transform w-full -translate-3/6"
     >
@@ -54,6 +80,33 @@ onUnmounted(() => {
       <ButtonCom class="w-40 mx-auto mt-10">
         <template v-slot:contant>sign in</template>
       </ButtonCom>
+    </div>
+  </section>
+  <section class="h-[100vh] group relative flex">
+    <span
+      class="w-full h-full flex justify-center items-center group-hover:animate-disappear animate-reappear bg-[rgba(0,0,0,0.8)] z-10 absolute"
+      ><p class="text-[clamp(2.5rem,5vw,4rem)]">
+        fined and explore genres
+      </p></span
+    >
+    <div
+      class="min-w-[calc(100%/5)] overflow-hidden relative"
+      v-for="genre in genres"
+      :key="genre"
+    >
+      <img
+        class="h-full w-full peer"
+        :src="`public/assets${genre.imageURL}`"
+        alt=""
+      />
+      <div
+        class="absolute shadow-bigShdow bg-[rgba(4,3,3,0.72)] hover:animate-jumpIn peer-hover:animate-jumpIn animate-getOut flex-col items-center w-full"
+      >
+        <p class="text-[clamp(2rem,5vw,3.75rem)] mb-12">{{ genre.name }}</p>
+        <ButtonCom class="w-48 h-12">
+          <template v-slot:contant>Start listening</template>
+        </ButtonCom>
+      </div>
     </div>
   </section>
 </template>

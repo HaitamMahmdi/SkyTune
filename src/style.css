@@ -8,6 +8,7 @@
   --color-error: #ff0000;
   --color-info: #00c8ff;
   --color-success: #00ff11;
+  --shadow-bigShdow: 0px 0px 1000px 1000px rgba(4, 3, 3, 0.72);
   /*chaingingText lg and biger */
   --animate-chaingingText: chaingingText 4s ease-in-out forwards alternate
     infinite;
@@ -42,11 +43,93 @@
       top: -103px;
     }
   }
+  /*chaingingText md to lg */
+  --animate-chaingingTextMd: chaingingTextMd 4s ease-in-out forwards alternate
+    infinite;
+  @keyframes chaingingTextMd {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -30px;
+    }
+    50% {
+      top: -67px;
+    }
+    100% {
+      top: -103px;
+    }
+  }
+  --animate-disappear: disappear 0.3s forwards;
+  @keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+  --animate-reappear: reappear 0.3s forwards;
+  @keyframes reappear {
+    0% {
+      display: flex;
+      opacity: 0;
+    }
+    100% {
+      display: flex;
+      opacity: 1;
+    }
+  }
+  --animate-jumpIn: jumpIn 0.6s ease-in-out forwards;
+  @keyframes jumpIn {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    25% {
+      opacity: 0;
+      display: flex;
+      bottom: -100px;
+    }
+    50% {
+      opacity: 1;
+      bottom: 7.4rem;
+      display: flex;
+    }
+    100% {
+      opacity: 1;
+      bottom: 7rem;
+      display: flex;
+    }
+  }
+  --animate-getOut: getOut 0.3s forwards;
+  @keyframes getOut {
+    0% {
+      opacity: 1;
+      bottom: 7rem;
+      display: flex;
+    }
+    50% {
+      opacity: 0;
+      display: flex;
+      bottom: 0%;
+    }
+    100% {
+      display: none;
+      opacity: 0;
+      bottom: 0%;
+    }
+  }
 }
 * {
   list-style: none;
   box-sizing: border-box;
   outline: none;
+  animation-fill-mode: forwards;
 }
 
 body {
