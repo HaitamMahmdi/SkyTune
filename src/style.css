@@ -124,6 +124,9 @@
       bottom: 0%;
     }
   }
+
+  /*breakpoints*/
+  --breakpoint-wide: 90rem;
 }
 * {
   list-style: none;
