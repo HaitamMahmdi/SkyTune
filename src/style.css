@@ -8,6 +8,7 @@
   --color-error: #ff0000;
   --color-info: #00c8ff;
   --color-success: #00ff11;
+  --text-title: 3.5rem;
   --shadow-bigShdow: 0px 0px 1000px 1000px rgba(4, 3, 3, 0.72);
   /*chaingingText lg and biger */
   --animate-chaingingText: chaingingText 4s ease-in-out forwards alternate
@@ -146,4 +147,8 @@ body {
 }
 .font-inter {
   font-family: "Inter", sans-serif;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
 }

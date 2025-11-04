@@ -1,7 +1,14 @@
 <script setup>
+/**
+ * TODO: Add a slider component
+ * TODO: ADD more animations
+ */
 import { onMounted, onUnmounted, ref } from "vue";
+import ArtistProfilePicCom from "../components/MediaCard.vue";
+import { useArtistsStore } from "../stores/ArtistsStore";
 const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 const base = import.meta.env.BASE_URL;
+const artists = useArtistsStore();
 const genres = [
   {
     name: "pop",
@@ -42,6 +49,7 @@ function changText() {
     num = 1;
   }
 }
+
 let changTextsetInterval = null;
 
 onMounted(() => {
@@ -147,6 +155,18 @@ onUnmounted(() => {
             <template v-slot:contant>Start listening</template>
           </ButtonCom>
         </div>
+      </div>
+    </section>
+    <section class="mt-11">
+      <h2 class="text-title text-center">Most listened to artists</h2>
+      <div class="mt-10 flex w-full overflow-x-scroll">
+        <ArtistProfilePicCom
+          v-for="(artist, index) in artists.getBestArtists"
+          :key="artist.artistName"
+          :title="artist.artistName"
+          :sub-title="artist.Albums[0].albumName"
+          :url="`${base}/assets/mediaCardImg/${index ? index : 11}.jpg`"
+        ></ArtistProfilePicCom>
       </div>
     </section>
   </main>
