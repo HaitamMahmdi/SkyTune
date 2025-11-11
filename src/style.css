@@ -135,7 +135,10 @@
   outline: none;
   animation-fill-mode: forwards;
 }
-
+*,
+html {
+  scroll-behavior: smooth !important;
+}
 body {
   margin: 0;
   font-family: "Days One", sans-serif;

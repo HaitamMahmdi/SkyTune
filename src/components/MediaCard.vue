@@ -10,17 +10,22 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div class="relative min-w-96 h-96 m-5 group">
+  <div class="relative h-[320px] group select-none" draggable="false">
     <h3
-      class="text-4xl absolute top-3/6 group-hover:opacity-100 opacity-0 transition right-4 transform -translate-y-3/6"
+      class="text-3xl absolute top-3/6 group-hover:opacity-100 min-wide:opacity-0 transition right-6 transform -translate-y-3/6"
     >
       {{ props.title }}
     </h3>
 
-    <img class="w-full h-full rounded-full" :src="props.url" alt="no image" />
+    <img
+      class="w-full h-full select-none"
+      :src="props.url"
+      alt="no image"
+      draggable="false"
+    />
 
     <button
-      class="bg-main group-hover:opacity-100 transition opacity-0 absolute cursor-pointer text-secondary text-4xl flex justify-center items-center text-center w-20 h-20 rounded-full top-3/4 right-0"
+      class="bg-main group-hover:opacity-100 transition min-wide:opacity-0 absolute cursor-pointer text-secondary text-4xl flex justify-center items-center text-center w-20 h-20 bottom-0 right-0"
     >
       <font-awesome-icon class="relative left-1" icon="play" />
     </button>
