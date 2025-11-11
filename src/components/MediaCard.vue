@@ -7,6 +7,12 @@ const props = defineProps({
   title: String,
   url: String,
   subTitle: String,
+  type: {
+    type: String,
+    required: true,
+  },
+  albumUrl: String,
+  streams: String,
 });
 </script>
 <template>
@@ -29,5 +35,16 @@ const props = defineProps({
     >
       <font-awesome-icon class="relative left-1" icon="play" />
     </button>
+  </div>
+  <div v-if="props.type != 'mid'">
+    <img class="w-full h-full" src="" alt="" />
+    <div>
+      <img
+        class="w-full h-full select-none"
+        :src="props.url"
+        alt="no image"
+        draggable="false"
+      />
+    </div>
   </div>
 </template>

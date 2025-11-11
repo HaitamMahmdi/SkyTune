@@ -4,9 +4,9 @@
  * TODO: ADD more animations
  */
 import { onMounted, onUnmounted, ref } from "vue";
-import ArtistProfilePicCom from "../components/MediaCard.vue";
 import { useArtistsStore } from "../stores/ArtistsStore";
 import SliderCom from "../components/SliderCom.vue";
+import MediaCard from "../components/MediaCard.vue";
 const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 const base = import.meta.env.BASE_URL;
 const artists = useArtistsStore();
@@ -162,13 +162,14 @@ onUnmounted(() => {
       <h2 class="text-title mb-10 text-center">Most listened to artists</h2>
       <SliderCom>
         <template v-slot:card>
-          <ArtistProfilePicCom
+          <MediaCard
             v-for="(artist, index) in artists.getBestArtists"
             :key="artist.artistName"
             :title="artist.artistName"
             :sub-title="artist.Albums[0].albumName"
             :url="`${base}/assets/mediaCardImg/${index ? index : 11}.jpg`"
-          ></ArtistProfilePicCom>
+            :type="'mid'"
+          ></MediaCard>
         </template>
       </SliderCom>
     </section>
