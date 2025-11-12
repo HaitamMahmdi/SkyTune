@@ -173,5 +173,39 @@ onUnmounted(() => {
         </template>
       </SliderCom>
     </section>
+    <section class="mt-11">
+      <h2 class="text-title mb-10 text-center">Most listened to albums</h2>
+      <div class="flex flex-wrap container justify-center">
+        <div class="max-w-[720px] aspect-square">
+          <MediaCard
+            v-for="artist in artists.getBestArtists.slice(0, 1)"
+            :key="artist.artistName"
+            :title="artist.artistName"
+            :sub-title="artist.Albums[0].albumName"
+            :url="`${base}/assets/mediaCardImg/${9}.jpg`"
+            :custom-class="' w-full h-full aspect-square'"
+            :album-url="`${base}/assets/albums/album${1}.jpg`"
+            :streams="artist.Albums[0].streams"
+            :type="'lg'"
+          ></MediaCard>
+        </div>
+
+        <div class="flex max-w-[720px] aspect-square justify-center flex-wrap">
+          <MediaCard
+            v-for="(artist, index) in artists.getBestArtists.slice(2, 6)"
+            :key="artist.artistName"
+            :title="artist.artistName"
+            :sub-title="artist.Albums[0].albumName"
+            :custom-class="' min-w-[320px] max-w-[360px] aspect-square'"
+            :url="`${base}/assets/mediaCardImg/${index ? index : 11}.jpg`"
+            :album-url="`${base}/assets/albums/album${
+              index === 0 ? index + 5 : index
+            }.jpg`"
+            :streams="artist.Albums[0].streams"
+            :type="'midX'"
+          ></MediaCard>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
