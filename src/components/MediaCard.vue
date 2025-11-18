@@ -51,9 +51,9 @@ const props = defineProps({
   >
     <img class="w-full h-full" :src="props.albumUrl" alt="" />
     <div
-      class="absolute w-fit text-center opacity-0 transition duration-200 group-hover:opacity-100 top-3/6 left-3/6 transform -translate-3/6 select-none"
+      class="absolute w-fit text-center opacity-0 transition duration-200 max-wide:opacity-100 group-hover:opacity-100 top-3/6 left-3/6 transform -translate-3/6 select-none"
     >
-      <div class="rounded-full relative">
+      <div class="rounded-full w-fit mx-auto relative">
         <img
           :src="props.url"
           alt="no image"
@@ -79,7 +79,7 @@ const props = defineProps({
   >
     <img class="w-full h-full" :src="props.albumUrl" alt="" />
     <div
-      class="absolute w-fit text-center opacity-0 transition duration-200 group-hover:opacity-100 top-3/6 left-3/6 transform -translate-3/6 select-none"
+      class="absolute min-wide:flex items-center w-fit text-center opacity-0 transition duration-200 max-wide:opacity-100 group-hover:opacity-100 left-5 bottom-5 max-wide:top-3/6 max-wide:left-3/6 max-wide:transform max-wide:-translate-3/6 select-none"
     >
       <div class="relative w-fit mx-auto">
         <img
@@ -95,7 +95,9 @@ const props = defineProps({
         />
       </div>
 
-      <p class="text-2xl mt-5">{{ props.streams }} monthly active listeners</p>
+      <p class="min-wide:text-2xl max-wide:mt-5 text-[18px] min-wide:mx-3">
+        {{ props.streams }} monthly active listeners
+      </p>
     </div>
   </div>
 </template>
