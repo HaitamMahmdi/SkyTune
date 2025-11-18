@@ -14,9 +14,25 @@ const props = defineProps({
   albumUrl: String,
   streams: String,
   customClass: String,
+  dateCreated: String,
 });
 </script>
 <template>
+  <div>
+    <div>
+      <img :src="props.url" alt="noImages" />
+      <p>{{ props.title }}</p>
+    </div>
+    <ul>
+      <li>{{ props.streams }}</li>
+      <li>{{ props.dateCreated }}</li>
+      <li>{{ props.subTitle }}</li>
+    </ul>
+
+    <button class="">
+      <font-awesome-icon class="relative left-1" icon="play" />
+    </button>
+  </div>
   <div
     v-if="props.type === 'mid'"
     :class="[props.class]"
