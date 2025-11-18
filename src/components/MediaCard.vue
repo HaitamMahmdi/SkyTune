@@ -18,19 +18,39 @@ const props = defineProps({
 });
 </script>
 <template>
-  <div>
-    <div>
-      <img :src="props.url" alt="noImages" />
-      <p>{{ props.title }}</p>
+  <div
+    class="flex justify-between transition hover:bg items-center mb-4 py-1.5 min-sm:text-[18px] px-4 bg-[rgba(17,17,17,1)]"
+    v-if="props.type === 'sm'"
+  >
+    <div class="flex items-center w-[370px] max-lg:w-[300px]">
+      <img
+        class="w-12 h-12 max-sm:w-10 max-sm:h-10 rounded-full"
+        :src="props.url"
+        alt="noImages"
+      />
+      <p class="ml-6">{{ props.title }}</p>
     </div>
-    <ul>
-      <li>{{ props.streams }}</li>
-      <li>{{ props.dateCreated }}</li>
-      <li>{{ props.subTitle }}</li>
+    <ul
+      class="flex max-[550px]:hidden items-center max-lg:w-[404px] max-md:w-fit w-[550px]"
+    >
+      <li class="w-36">{{ props.streams }}</li>
+      <span class="block max-lg:hidden mx-5 w-0.5 h-9 bg-amber-50"></span>
+      <li class="w-36 max-md:w-fit max-lg:hidden">{{ props.dateCreated }}</li>
+      <span class="block mx-5 max-md:hidden w-0.5 h-9 bg-amber-50"></span>
+      <li class="w-36 max-md:hidden" :title="props.subTitle">
+        {{
+          props.subTitle.length > 10
+            ? props.subTitle.slice(0, 9) + `...`
+            : props.subTitle
+        }}
+      </li>
+      <span class="block mx-5 w-0.5 h-9 bg-amber-50"></span>
     </ul>
 
-    <button class="">
-      <font-awesome-icon class="relative left-1" icon="play" />
+    <button
+      class="bg-main text-black w-10 h-10 max-sm:w-9 max-sm:h-9 rounded-full cursor-pointer"
+    >
+      <font-awesome-icon class="relative left-0.5" icon="play" />
     </button>
   </div>
   <div

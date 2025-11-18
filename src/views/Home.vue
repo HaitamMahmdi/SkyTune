@@ -196,13 +196,28 @@ onUnmounted(() => {
             :key="artist.artistName"
             :title="artist.artistName"
             :sub-title="artist.Albums[0].albumName"
-            :custom-class="' min-w-[320px] max-w-[360px] aspect-square'"
+            :custom-class="`min-w-[320px] max-w-[360px] ${index} aspect-square`"
             :url="`${base}/assets/mediaCardImg/${index ? index : 11}.jpg`"
             :album-url="`${base}/assets/albums/album${
               index === 0 ? index + 5 : index
             }.jpg`"
             :streams="artist.Albums[0].streams"
             :type="'midX'"
+          ></MediaCard>
+        </div>
+      </div>
+      <div class="container mt-1.5">
+        <div class="max-w-[1040px]">
+          <MediaCard
+            v-for="(artist, index) in artists.getBestArtists.slice(0, 10)"
+            :key="artist.artistName"
+            :title="artist.Albums[0].songs[0].songName"
+            :sub-title="artist.Albums[0].albumName"
+            :url="`${base}/assets/mediaCardImg/${index ? index : 11}.jpg`"
+            :id="index"
+            :streams="artist.Albums[0].streams"
+            :type="'sm'"
+            :date-created="artist.Albums[0].songs[0].createDate"
           ></MediaCard>
         </div>
       </div>
