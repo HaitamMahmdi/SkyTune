@@ -19,10 +19,10 @@ const props = defineProps({
 </script>
 <template>
   <div
-    class="flex justify-between transition hover:bg items-center mb-4 py-1.5 min-sm:text-[18px] px-4 bg-[rgba(17,17,17,1)]"
+    class="flex justify-between transition hover:bg items-center mb-4 py-1.5 min-sm:text-[18px] pl-4 pr-1.5 bg-[rgba(17,17,17,1)]"
     v-if="props.type === 'sm'"
   >
-    <div class="flex items-center w-[370px] max-lg:w-[300px]">
+    <div class="flex items-center w-[370px] max-lg:max-w-[260px]">
       <img
         class="w-12 h-12 max-sm:w-10 max-sm:h-10 rounded-full"
         :src="props.url"
