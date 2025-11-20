@@ -1,5 +1,6 @@
 <script setup>
 import { useRouter } from "vue-router";
+import FooterCom from "./components/FooterCom.vue";
 const router = useRouter();
 </script>
 
@@ -44,4 +45,5 @@ const router = useRouter();
   <main>
     <router-view></router-view>
   </main>
+  <FooterCom></FooterCom>
 </template>
