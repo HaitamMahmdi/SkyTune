@@ -15,16 +15,29 @@ const router = useRouter();
       <ul
         class="flex flex-wrap w-full md:w-fit justify-center mt-5 md:m-0 font-inter gap-x-5 px-3"
       >
-        <li
-          v-for="(route, index) in router.getRoutes()"
-          :key="route.meta.title"
-          v-show="index <= 4"
-        >
-          <RouterLink
-            :to="{ name: route.name }"
-            class="hover:text-main duration-100"
-          >
-            {{ route.meta.title }}
+        <li>
+          <RouterLink to="/" class="hover:text-main duration-100"
+            >Home
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/songs" class="hover:text-main duration-100"
+            >songs
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/selectPlan" class="hover:text-main duration-100"
+            >Select Plan
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/getApp" class="hover:text-main duration-100"
+            >Get App
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/about" class="hover:text-main duration-100"
+            >About
           </RouterLink>
         </li>
       </ul>
