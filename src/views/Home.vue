@@ -104,7 +104,6 @@ onUnmounted(() => {
     >
       <span
         v-if="!isMobile"
-        :style="{ left: `${pos}px` }"
         class="w-full h-full max-md:!hidden flex justify-center items-center group-hover:animate-disappear animate-reappear bg-[rgba(0,0,0,0.8)] z-10 absolute"
       >
         <p class="text-[clamp(2.5rem,5vw,4rem)]">Find and explore genres</p>
