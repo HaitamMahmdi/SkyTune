@@ -18,7 +18,7 @@ const plansStore = usePlansStore();
         </h2>
       </div>
       <div class="flex flex-col justify-between grow">
-        <div>
+        <div class="w-fit mx-auto">
           <div
             v-for="(feature, index) in plan.features"
             :key="feature"

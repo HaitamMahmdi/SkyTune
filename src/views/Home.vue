@@ -162,7 +162,7 @@ onUnmounted(() => {
       <SliderCom>
         <template v-slot:card>
           <MediaCard
-            v-for="(artist, index) in artists.getBestArtists"
+            v-for="(artist, index) in artists.getBestArtists.slice(2)"
             :key="artist.artistName"
             :title="artist.artistName"
             :sub-title="artist.Albums[0].albumName"
