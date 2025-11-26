@@ -124,6 +124,7 @@ const props = defineProps({
       <div class="relative w-fit mx-auto">
         <img
           class="absolute right-0 top-3/4"
+          loading="lazy"
           src="/public/assets/icons/Verified Account.svg"
           alt=""
         />
