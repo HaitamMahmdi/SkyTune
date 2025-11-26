@@ -26,6 +26,7 @@ const props = defineProps({
       <img
         class="w-12 h-12 max-sm:w-10 max-sm:h-10 rounded-full"
         :src="props.url"
+        loading="lazy"
         alt="noImages"
       />
       <p class="ml-6">{{ props.title }}</p>
@@ -71,6 +72,7 @@ const props = defineProps({
       :src="props.url"
       alt="no image"
       draggable="false"
+      loading="lazy"
     />
 
     <button
@@ -95,11 +97,13 @@ const props = defineProps({
           alt="no image"
           class="rounded-full w-32 h-32 mx-auto"
           draggable="false"
+          loading="lazy"
         />
         <img
           class="absolute right-0 top-3/4"
           src="/public/assets/icons/Verified Account.svg"
           alt=""
+          loading="lazy"
         />
       </div>
       <p class="text-bold mt-10 text-[18px]">
@@ -128,6 +132,7 @@ const props = defineProps({
           alt="no image"
           class="rounded-full w-32 h-32 mx-auto"
           draggable="false"
+          loading="lazy"
         />
       </div>
 

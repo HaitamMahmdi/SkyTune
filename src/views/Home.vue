@@ -1,6 +1,5 @@
 <script setup>
 /**
- * TODO: Add a slider component
  * TODO: ADD more animations
  */
 import { onMounted, onUnmounted, ref } from "vue";
