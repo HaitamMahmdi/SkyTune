@@ -8,7 +8,7 @@ _All the data—artist names, songs, etc.—are not real. They are placeholders.
 
 ## Why I Built This Website
 
-- This is the **commercial website** for the actual app, which is a music player still in the design phase.
+- This is the **commercial website** for a app, which is a music player
 - This project is a **training exercise** to help me understand some front-end development tools (Figma, Pinia, UI/UX).
 - A way to learn new things and add more projects to my portfolio.
 
